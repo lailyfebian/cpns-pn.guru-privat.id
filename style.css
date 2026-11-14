@@ -289,6 +289,7 @@ button,
 
 
 
+
 /* ==============================
    PRODUK PRIVAT NUSANTARA
 ============================== */
@@ -330,7 +331,7 @@ button,
     line-height: 1.4;
 }
 
-/* INTRO COPY */
+/* INTRO */
 
 .produk-intro {
     max-width: 900px;
@@ -345,84 +346,61 @@ button,
     line-height: 1.85;
 }
 
-/* PROGRAM LIST */
-
-.produk-program-list {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 8px 25px;
-    max-width: 750px;
-    margin: 18px auto 0;
-    padding: 0;
-    list-style: none;
-    text-align: left;
-}
-
-.produk-program-list li {
-    position: relative;
-    padding-left: 19px;
-    color: #075333;
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 1.7;
-}
-
-.produk-program-list li::before {
-    content: "";
-    position: absolute;
-    top: 8px;
-    left: 0;
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: #F5C542;
-}
-
 /* PRODUCT GRID */
 
 .produk-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 22px;
+    gap: 25px 22px;
 }
 
 /* PRODUCT CARD */
 
 .produk-card {
+    width: 100%;
+    min-width: 0;
+    background: transparent;
+}
+
+/* TITLE ABOVE IMAGE */
+
+.produk-card h3 {
+    margin: 0 0 11px;
+    color: #075333;
+    font-size: 16px !important;
+    font-weight: 700;
+    line-height: 1.45;
+    text-align: center;
+}
+
+/* IMAGE */
+
+.produk-image {
     position: relative;
     overflow: hidden;
     width: 100%;
     aspect-ratio: 4 / 5;
-    border-radius: 12px;
-    background: transparent;
-    box-shadow: none;
-    transition: transform 0.3s ease;
+    border-radius: 11px;
+    background: #EAF4EB;
 }
 
-.produk-card:hover {
-    transform: translateY(-3px);
-    box-shadow: none;
-}
-
-.produk-card img {
+.produk-image img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: contain;
     object-position: center;
-    background: transparent;
-    box-shadow: none;
 }
 
-/* BUTTON OVER IMAGE */
+/* BUTTON */
 
 .button-produk {
     position: absolute;
     z-index: 2;
     right: 0;
-    bottom: 17px;
+    bottom: 15px;
     left: 0;
-    padding: 0 15px;
+    padding: 0 12px;
     text-align: center;
 }
 
@@ -447,10 +425,9 @@ button,
 .button-produk .btn:hover {
     background: #F5C542;
     color: #064329 !important;
-    border: none !important;
 }
 
-/* CLOSING COPY */
+/* CLOSING */
 
 .produk-closing {
     max-width: 850px;
@@ -505,6 +482,7 @@ button,
 /* TABLET */
 
 @media (max-width: 991.98px) {
+
     .list-produk {
         padding: 60px 20px;
     }
@@ -515,28 +493,26 @@ button,
 
     .produk-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 18px;
+        gap: 22px 18px;
     }
 
-    .produk-program-list {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .button-produk {
-        bottom: 13px;
-    }
-
-    .button-produk .btn {
-        padding: 8px 14px;
-        font-size: 11px;
+    .produk-card h3 {
+        font-size: 15px !important;
     }
 }
 
 /* MOBILE */
 
 @media (max-width: 767.98px) {
+
     .list-produk {
         padding: 45px 14px;
+    }
+
+    .list-produk .container {
+        width: 100%;
+        max-width: none;
+        padding: 0;
     }
 
     .produk-heading {
@@ -562,40 +538,29 @@ button,
         line-height: 1.8;
     }
 
-    .produk-program-list {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 8px 14px;
-        margin-top: 15px;
-    }
-
-    .produk-program-list li {
-        padding-left: 15px;
-        font-size: 10px;
-    }
-
-    .produk-program-list li::before {
-        top: 7px;
-        width: 6px;
-        height: 6px;
-    }
-
-    /* SATU FOTO SETIAP BARIS */
+    /* SATU KOLOM MOBILE */
 
     .produk-grid {
         grid-template-columns: 1fr;
-        gap: 18px;
+        gap: 23px;
     }
 
     .produk-card {
         width: 100%;
-        max-width: 440px;
-        margin: 0 auto;
-        aspect-ratio: 4 / 5;
-        border-radius: 9px;
+        max-width: none;
+        margin: 0;
     }
 
-    .produk-card img {
-        object-fit: contain;
+    .produk-card h3 {
+        margin-bottom: 9px;
+        font-size: 15px !important;
+        text-align: left;
+    }
+
+    .produk-image {
+        width: 100%;
+        aspect-ratio: 4 / 5;
+        border-radius: 9px;
     }
 
     .button-produk {
@@ -631,6 +596,7 @@ button,
 /* SMALL MOBILE */
 
 @media (max-width: 380px) {
+
     .list-produk {
         padding: 38px 12px;
     }
@@ -639,20 +605,16 @@ button,
         font-size: 21px !important;
     }
 
-    .produk-program-list {
-        gap: 7px 10px;
-    }
-
-    .produk-program-list li {
-        font-size: 9px;
-    }
-
     .produk-grid {
-        gap: 14px;
+        gap: 20px;
     }
 
-    .produk-card {
-        max-width: 100%;
+    .produk-card h3 {
+        font-size: 14px !important;
+    }
+
+    .produk-image {
+        border-radius: 8px;
     }
 
     .button-produk .btn {
@@ -661,7 +623,8 @@ button,
 }
 
 
-s/* Section CTA */
+
+/* Section CTA */
 .cta-page .container {
     background-color: #f2c300;
     padding: 100px 30px;
@@ -3763,10 +3726,11 @@ s/* Section CTA */
         width: 42px;
         height: 42px;
         border-radius: 10px;
-        font-size: 19px;
+        font-size: 24px;
     }
 
     .cpns-method-icon i {
+        font-size: 25px !important;
         -webkit-text-stroke: 0.7px currentColor;
     }
 
@@ -4782,6 +4746,7 @@ s/* Section CTA */
 }
 
 
+
 /* ==============================
    TESTIMONIAL SECTION
 ============================== */
@@ -4952,6 +4917,7 @@ s/* Section CTA */
     display: flex;
     flex-direction: column;
     flex: 1;
+    min-width: 0;
     padding: 22px 24px;
 }
 
@@ -5017,6 +4983,7 @@ s/* Section CTA */
 /* TABLET */
 
 @media (max-width: 991.98px) {
+
     .testimonial-section {
         padding: 65px 20px;
     }
@@ -5061,6 +5028,7 @@ s/* Section CTA */
 /* MOBILE */
 
 @media (max-width: 767.98px) {
+
     .testimonial-section {
         padding: 50px 14px;
     }
@@ -5093,6 +5061,8 @@ s/* Section CTA */
         gap: 14px;
     }
 
+    /* SEMUA KARTU HORIZONTAL */
+
     .testimonial-card,
     .testimonial-featured,
     .testimonial-compact {
@@ -5102,21 +5072,26 @@ s/* Section CTA */
         align-items: stretch;
     }
 
+    /* SEMUA FOTO SAMA */
+
     .testimonial-featured .testimonial-image,
     .testimonial-compact .testimonial-image {
         width: 34%;
         min-width: 105px;
         height: auto;
         min-height: 190px;
+        flex-shrink: 0;
     }
 
-    .testimonial-featured .testimonial-image img {
-        object-fit: contain;
-    }
-
+    .testimonial-featured .testimonial-image img,
     .testimonial-compact .testimonial-image img {
+        width: 100%;
+        height: 100%;
         object-fit: cover;
+        object-position: center top;
     }
+
+    /* CONTENT */
 
     .testimonial-content,
     .testimonial-featured .testimonial-content {
@@ -5144,6 +5119,8 @@ s/* Section CTA */
         font-size: 12px !important;
     }
 
+    /* NUMBER */
+
     .testimonial-image-number {
         top: 8px;
         left: 8px;
@@ -5157,6 +5134,7 @@ s/* Section CTA */
 /* SMALL MOBILE */
 
 @media (max-width: 380px) {
+
     .testimonial-section {
         padding: 42px 12px;
     }
@@ -5189,6 +5167,7 @@ s/* Section CTA */
 }
 
 
+
 /* ==============================
    LIST KOTA CPNS
 ============================== */
@@ -5200,7 +5179,7 @@ s/* Section CTA */
     font-family: 'Poppins', sans-serif;
 }
 
-/* Heading */
+/* HEADING */
 
 .list-kota h2 {
     max-width: 800px;
@@ -5219,7 +5198,7 @@ s/* Section CTA */
     line-height: 1.8;
 }
 
-/* Container Kota */
+/* CONTAINER KOTA */
 
 .list-kota .container {
     max-width: 1050px;
@@ -5236,30 +5215,36 @@ s/* Section CTA */
     padding: 0;
 }
 
-/* Grid Kota */
+/* GRID KOTA */
 
 .list-kota .container .d-grid {
     display: grid !important;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 8px 25px;
     align-items: start;
+    justify-items: start;
 }
 
-/* Item Kota */
+/* ITEM KOTA */
 
 .list-kota .container .d-grid p {
-    margin: 0;
+    width: 100%;
+    margin: 0 !important;
     min-width: 0;
+    text-align: left !important;
 }
 
 .list-kota .container .d-grid a {
     display: block !important;
     width: fit-content;
+    max-width: 100%;
+    margin: 0 !important;
     padding: 4px 0;
     color: #075333 !important;
     font-size: 12px;
     font-weight: 500;
     line-height: 1.6;
+    text-align: left !important;
     text-decoration: none;
     transition: color 0.2s ease;
 }
@@ -5269,7 +5254,7 @@ s/* Section CTA */
     text-decoration: underline !important;
 }
 
-/* Closing Text */
+/* CLOSING TEXT */
 
 .list-kota > p:last-child {
     margin: 20px auto 0;
@@ -5277,9 +5262,10 @@ s/* Section CTA */
     font-size: 12px;
 }
 
-/* Tablet */
+/* TABLET */
 
 @media (max-width: 991.98px) {
+
     .list-kota {
         padding: 55px 20px;
     }
@@ -5298,9 +5284,10 @@ s/* Section CTA */
     }
 }
 
-/* Mobile */
+/* MOBILE */
 
 @media (max-width: 767.98px) {
+
     .list-kota {
         padding: 45px 14px;
     }
@@ -5317,6 +5304,7 @@ s/* Section CTA */
     }
 
     .list-kota .container {
+        width: 100%;
         margin: 22px auto;
         padding: 18px;
         border-radius: 11px;
@@ -5328,8 +5316,11 @@ s/* Section CTA */
     }
 
     .list-kota .container .d-grid a {
+        width: fit-content;
+        margin: 0 !important;
         padding: 4px 0;
         font-size: 11px;
+        text-align: left !important;
     }
 
     .list-kota > p:last-child {
@@ -5338,9 +5329,10 @@ s/* Section CTA */
     }
 }
 
-/* Small Mobile */
+/* SMALL MOBILE */
 
 @media (max-width: 380px) {
+
     .list-kota {
         padding: 38px 12px;
     }
